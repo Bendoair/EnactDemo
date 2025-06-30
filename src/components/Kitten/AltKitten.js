@@ -24,9 +24,11 @@ const AltKittenBase = ({children, index, onSelect, ...rest}) => {
     <ImageItem 
         src={getPictureUrlHW({id: index, width: 300, height: 300})}
         onClick={() => onSelect?.({index})}
+        
         caption={name}
         label={`${genders[gender]} kittycat, ${color}`}
         css={css}
+        className={css.AltKitten}
         {...rest}
     >
         
