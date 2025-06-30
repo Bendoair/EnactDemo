@@ -1,0 +1,13 @@
+{
+    "id": "hu.misoftware.enact-tutorial",
+    "version": "1.0.0",
+    "vendor": "My Company",
+    "type": "web",
+    "main": "index.html",
+    "title": "Enact Learning App",
+    "icon": "icon.png",
+    "requiredPermissions": [
+        "time.query",
+        "activity.operation"
+    ]
+}
