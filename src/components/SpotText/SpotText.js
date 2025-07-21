@@ -1,35 +1,25 @@
-import Spottable from "@enact/spotlight/Spottable";
+import {Spottable} from "@enact/spotlight/Spottable";
 import BodyText from '@enact/sandstone/BodyText';
 import css from './SpotText.module.less';
 import PropTypes from 'prop-types';
 import {forwardRef} from 'react';
 import Button from "@enact/sandstone/Button";
 
-const BaseText = forwardRef(function BaseText({displayText = "TestTextDisplay", functionPassed, ...rest}, ref) {
-
-    const nani = () =>{
-        console.log("Function called");
-        functionPassed();
-    };
-
+const BaseText = ({onClick, displayText = "TestTextDisplay", ...rest}) => {
 	return (
-		// <div
-		// 	ref={ref}
-		// 	className={css.basetext}
-		// 	tabIndex="-1"
-		// 	role="button"
-		// 	onClick={nani}
-		// 	{...rest}
-		// >
-		// 	<Button {...rest} onClick={nani}>{displayText}</Button>
-		// </div>
-		<Button onClick={nani}>
-			<div className={css.basetext}>
-				{displayText}
-			</div>
-		</Button>
+		<div
+			className={css.basetext}
+			role="button"
+			onClick={onClick}
+			{...rest}
+		>
+			displayText
+		</div>
+		
 	);
-});
+};
+
+const SpotText = Spottable(BaseText);
 
 BaseText.propTypes = {
 	displayText: PropTypes.string,
@@ -37,6 +27,7 @@ BaseText.propTypes = {
 
 };
 
-const SpotText = Spottable(BaseText);
+
+//const SpotText = BaseText;
 
 export default SpotText;

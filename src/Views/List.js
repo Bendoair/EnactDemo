@@ -14,6 +14,7 @@ import Spotlight from '@enact/spotlight';
 import SpotlightContainerDecorator from '@enact/spotlight/SpotlightContainerDecorator';
 import css from '../components/Kitten/Kitten.module.less';
 import AltKitten from '../components/Kitten/AltKitten';
+import SpotText from '../components/SpotText/SpotText';
 
 const FocusContainer = SpotlightContainerDecorator("div");
 
@@ -39,6 +40,7 @@ function List({handleNavAndIndex, children}) {
 		}
 	};
 
+	const somefunc = () => {console.log("Some func")};
 
 	return (
 		<Panel closeButtonAriaLabel="Log out" noBackButton onClose={handleLogOut}>
@@ -59,6 +61,17 @@ function List({handleNavAndIndex, children}) {
 			</Scroller>
 
 		</Panel>
+
+		
+
+		// <Panel closeButtonAriaLabel="Log out" noBackButton onClose={handleLogOut}>
+		// 	<Header title="Kittens!" />
+		// 	{logoutError && <p>{logoutError}</p>}
+		// 	<Scroller>
+		// 		<SpotText onClick={somefunc}>Heyyyy</SpotText>
+		// 	</Scroller>
+
+		// </Panel>
 
 
 	);

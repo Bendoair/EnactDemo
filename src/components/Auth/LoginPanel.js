@@ -2,7 +2,7 @@ import Panel from '@enact/sandstone/Panels/Panel';
 import Header from '@enact/sandstone/Panels';
 import Input from '@enact/sandstone/Input';
 import Button from '@enact/sandstone/Button';
-import { useState } from 'react';
+import { useState,useEffect} from 'react';
 import css from './Auth.module.less';
 import { useAuth } from "../../contexts/AuthContext";
 import { useNavigate } from 'react-router-dom';
@@ -11,7 +11,7 @@ import { getPictureUrlHW } from '../../picsource';
 import Image from '@enact/sandstone/Image';
 
 const LoginPanel = () => {
-  const { login } = useAuth();
+  const { login, googleLogin, user } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -19,15 +19,30 @@ const LoginPanel = () => {
 
   const welcomeImage = getPictureUrlHW({id: 47, width:1280, height:792})
 
+  useEffect(() => {
+    if (user) {
+      navigate('/list');
+    }
+  }, [user, navigate]);
+
 
   const handleLogin = async () => {
     try {
       await login(email, password);
-      navigate('/list');
+      //navigate('/list');
     } catch (err) {
       setError(err.message);
     }
   };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await googleLogin();
+      //navigate('/list');
+    } catch (err) {
+      setError(err.message);
+    }
+  }
 
   const handleSignupNavigate = () => {
     navigate('/signup');
@@ -52,7 +67,7 @@ const LoginPanel = () => {
           />
           <Button onClick={handleLogin}>Log In</Button>
           {error && <p className={css.error}>{error}</p>}
-
+          <Button onClick={handleGoogleLogin}>Log In With Google Instead</Button>
           <Button onClick={handleSignupNavigate}>Sign Up Instead</Button>
         </div>
         <div className={css.imageCentered}>
