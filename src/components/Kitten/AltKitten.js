@@ -17,27 +17,25 @@ const genders = {
 
 const AltKittenBase = ({children, index, onSelect, ...rest}) => {
     if(!children) return null;
-    const { name, color, weight, gender } = children[index];
+    const { name, color, weight, gender } = children;
 
-    
+
 
     console.log("AltKittenBase got children data: ", children)
 
     return (
-        
-        <ImageItem 
+
+        <ImageItem
                 src={getPictureUrlHW({id: index, width: 300, height: 300})}
                 onClick={() => onSelect?.({index})}
                 //onKeyDown={handleTheClickPlease}
-                
+
                 caption={name}
                 label={`${genders[gender]} kittycat, ${color}`}
                 css={css}
                 className={css.AltKitten}
                 {...rest}
-            >
-                
-        </ImageItem>
+             />
     )
 
 }

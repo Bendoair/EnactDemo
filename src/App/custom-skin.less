@@ -1,0 +1,163 @@
+/* src/theme.less */
+/* ========== BLUE & GREY THEME ========== */
+/* Core Colors */
+:root {
+  /* Primary Colors */
+  --sand-primary-color: #1a73e8;       // Google Blue 600
+  --sand-primary-light-color: #4285f4;  // Google Blue 500
+  --sand-primary-dark-color: #0d47a1;   // Google Blue 900
+  --sand-accent-color: #5c6bc0;         // Indigo 400
+  --sand-attention-color: #e53935;      // Red 600 (for errors/alerts)
+
+  /* Background & Surface Colors */
+  --sand-background-color: #f5f5f5;     // Grey 100
+  --sand-panel-bg-color: #ffffff;       // White
+  --sand-panel-header-bg-color: #eceff1;// Blue Grey 50
+  --sand-popup-bg-color: #ffffff;       // White
+  --sand-overlay-bg-color: rgba(0, 0, 0, 0.5);
+
+  /* Text Colors */
+  --sand-text-color: #3c4043;           // Grey 800
+  --sand-title-text-color: #202124;      // Grey 900
+  --sand-body-text-color: #3c4043;       // Grey 800
+  --sand-subtitle-text-color: #5f6368;   // Grey 700
+  --sand-disabled-text-color: #9aa0a6;   // Grey 500
+  --sand-panel-header-text-color: #3c4043; // Grey 800
+
+  /* Shadows */
+  --sand-shadow-color: rgba(60, 64, 67, 0.3); // Grey 800 @ 30%
+  --sand-container-shadow: 0 2px 8px var(--sand-shadow-color);
+
+  /* Typography */
+  --sand-font-family: 'Roboto', -apple-system, sans-serif;
+  --sand-font-family-base: 'Roboto', -apple-system, sans-serif;
+  --sand-font-family-heading: 'Google Sans', 'Roboto', sans-serif;
+  --sand-font-family-code: 'Roboto Mono', monospace;
+  --sand-font-size-base: 16px;
+  --sand-font-size-large: 18px;
+
+  /* Buttons */
+  --sand-button-bg-color: var(--sand-primary-color);
+  --sand-button-text-color: #ffffff;
+  --sand-button-selected-bg-color: #0d47a1; // Blue 900
+  --sand-button-disabled-bg-color: #9aa0a6; // Grey 500
+  --sand-button-border-radius: 24px;
+  --sand-button-small-height: 36px;
+  --sand-button-medium-height: 48px;
+  --sand-button-large-height: 60px;
+
+  /* Inputs */
+  --sand-input-bg-color: #ffffff;
+  --sand-input-text-color: var(--sand-text-color);
+  --sand-input-border-color: #dadce0;    // Grey 300
+  --sand-input-placeholder-color: #9aa0a6; // Grey 500
+  --sand-input-disabled-bg-color: #f1f3f4; // Grey 100
+  --sand-input-disabled-text-color: #9aa0a6; // Grey 500
+  --sand-input-border-radius: 8px;
+  --sand-input-height: 48px;
+  --sand-input-padding: 0 16px;
+
+  /* Checkboxes & Radios */
+  --sand-checkbox-size: 20px;
+  --sand-checkbox-border-radius: 4px;
+  --sand-checkbox-border-color: #5f6368; // Grey 700
+  --sand-checkbox-checked-color: var(--sand-primary-color);
+
+  /* Toggles */
+  --sand-toggle-on-bg-color: var(--sand-primary-color);
+  --sand-toggle-off-bg-color: #dadce0;   // Grey 300
+  --sand-toggle-knob-bg-color: #ffffff;
+  --sand-toggle-border-radius: 12px;
+  --sand-toggle-width: 48px;
+  --sand-toggle-height: 24px;
+  --sand-toggle-knob-size: 20px;
+
+  /* Progress & Sliders */
+  --sand-progress-bg-color: #e8f0fe;    // Very light blue
+  --sand-progress-fill-bg-color: var(--sand-primary-color);
+  --sand-progress-height: 8px;
+  --sand-progress-border-radius: 4px;
+  --sand-slider-knob-bg-color: var(--sand-primary-color);
+  --sand-slider-knob-size: 24px;
+  --sand-slider-bar-height: 4px;
+
+  /* Items & Lists */
+  --sand-item-bg-color: transparent;
+  --sand-item-text-color: var(--sand-text-color);
+  --sand-item-selected-bg-color: #e8f0fe; // Very light blue
+  --sand-item-selected-text-color: var(--sand-text-color);
+  --sand-item-disabled-bg-color: transparent;
+  --sand-item-disabled-text-color: var(--sand-disabled-text-color);
+  --sand-item-height: 72px;
+  --sand-item-padding: 0 24px;
+  --sand-list-bg-color: #ffffff;
+  --sand-container-border-radius: 12px;
+
+  /* Scrollers */
+  --sand-scroller-thumb-bg-color: rgba(60, 64, 67, 0.4); // Grey 800 @ 40%
+  --sand-scroller-track-bg-color: transparent;
+  --sand-scroller-thumb-size: 8px;
+
+  /* Popups */
+  --sand-popup-text-color: var(--sand-text-color);
+  --sand-popup-border-radius: 12px;
+  --sand-popup-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+
+  @sand-text-color-rgb: var(--sand-text-color-rgb, 0, 0, 230);
+}
+
+/* ========== DARK MODE ========== */
+[data-sand-dark-mode="true"] {
+  /* Primary Colors */
+  --sand-primary-color: #8ab4f8;        // Light Blue 400
+  --sand-primary-light-color: #bbdefb;  // Light Blue 100
+  --sand-primary-dark-color: #4285f4;   // Blue 500
+  --sand-accent-color: #7986cb;         // Indigo 300
+
+  /* Background & Surface Colors */
+  --sand-background-color: #202124;     // Grey 900
+  --sand-panel-bg-color: #303134;       // Grey 800
+  --sand-panel-header-bg-color: #3c4043; // Grey 700
+  --sand-popup-bg-color: #303134;       // Grey 800
+  --sand-overlay-bg-color: rgba(0, 0, 0, 0.7);
+
+  /* Text Colors */
+  --sand-text-color: #e8eaed;           // Grey 100
+  --sand-title-text-color: #ffffff;
+  --sand-body-text-color: #e8eaed;
+  --sand-subtitle-text-color: #9aa0a6;   // Grey 500
+  --sand-panel-header-text-color: #ffffff;
+
+  /* Shadows */
+  --sand-shadow-color: rgba(0, 0, 0, 0.4);
+  --sand-container-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+  /* Inputs */
+  --sand-input-bg-color: #303134;       // Grey 800
+  --sand-input-border-color: #5f6368;   // Grey 700
+  --sand-input-disabled-bg-color: #3c4043; // Grey 700
+
+  /* Toggles */
+  --sand-toggle-off-bg-color: #5f6368;  // Grey 700
+
+  /* Items & Lists */
+  --sand-item-selected-bg-color: #3d5afe; // Darker blue
+  --sand-list-bg-color: #303134;        // Grey 800
+
+  /* Progress */
+  --sand-progress-bg-color: #3c4043;    // Grey 700
+}
+
+/* ========== HIGH CONTRAST MODE ========== */
+[data-sand-high-contrast="true"] {
+  --sand-primary-color: #1a73e8;
+  --sand-text-color: #000000;
+  --sand-background-color: #ffffff;
+  
+  [data-sand-dark-mode="true"] {
+    --sand-primary-color: #8ab4f8;
+    --sand-text-color: #ffffff;
+    --sand-background-color: #000000;
+  }
+}

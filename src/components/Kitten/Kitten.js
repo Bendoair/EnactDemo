@@ -44,7 +44,7 @@ const KittenBase = kind({
 	render: ({children, handleClick, size, url, ...rest}) => {
 		delete rest.index;
 		delete rest.onSelect;
-		
+
 
 		return (
 			<div {...rest} onClick={handleClick} role='button'>

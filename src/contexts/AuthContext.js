@@ -27,7 +27,7 @@ export function AuthProvider({ children }) {
 		return unsubscribe;
 	}, []);
 
-	
+
 
 	const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
 	const googleLogin = () => {

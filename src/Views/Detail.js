@@ -1,6 +1,7 @@
 import {Header, Panel} from '@enact/sandstone/Panels';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import VideoPlayer from './VideoPlayer';
 
 const genders = {
 	0: 'Male',
@@ -21,6 +22,9 @@ const DetailBase = ({color = 'Orange', gender = 1, name = 'Unnamed Kitten', weig
 			<div>Gender: {genders[gender]}</div>
 			<div>Color: {color}</div>
 			<div>Weight: {weight}kg</div>
+			<div>
+				<VideoPlayer/>
+			</div>
 		</Panel>
 	)
 };

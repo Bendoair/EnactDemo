@@ -15,7 +15,7 @@ const BaseText = ({onClick, displayText = "TestTextDisplay", ...rest}) => {
 		>
 			displayText
 		</div>
-		
+
 	);
 };
 

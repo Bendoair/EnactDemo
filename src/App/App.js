@@ -1,3 +1,7 @@
+import './custom-skin.less';
+
+
+
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import Changeable from '@enact/ui/Changeable';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
@@ -14,6 +18,8 @@ import SpotText from '../components/SpotText/SpotText';
 import Popup from '@enact/sandstone/Popup';
 import Button from '@enact/sandstone/Button';
 import { getData } from '../data/datasource';
+import { FloatingLayerDecorator } from '@enact/ui/FloatingLayer';
+
 
 
 function AppBase({...rest}) {
@@ -31,7 +37,7 @@ function AppBase({...rest}) {
 
 	useEffect(()=>{
 		loadKittens()
-		
+
 	}, []);
 
 	const handleNavAndIndex = ({index}) => {
@@ -81,7 +87,7 @@ const AppContainer = props => {
 };
 
 const App = ThemeDecorator(SpotlightRootDecorator(AppContainer));
-//const App = SpotlightRootDecorator(AppContainer);
+//const App = FloatingLayerDecorator(SpotlightRootDecorator(AppContainer));
 
 export default App;
 export { App, AppBase };

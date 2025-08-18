@@ -55,14 +55,14 @@ function List({handleNavAndIndex, children}) {
 				>
 					{children.map((kitten) => ({
 						key: kitten.id,
-						children
+						children: kitten
 					}))}
 				</Repeater>
 			</Scroller>
 
 		</Panel>
 
-		
+
 
 		// <Panel closeButtonAriaLabel="Log out" noBackButton onClose={handleLogOut}>
 		// 	<Header title="Kittens!" />
